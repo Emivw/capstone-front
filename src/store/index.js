@@ -3,7 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     user: null,
-
+    users: null,
+    products: null,
+    product: null
   },
   getters: {
   },
@@ -22,30 +24,67 @@ export default createStore({
     }
   },
   actions: {
-    async loginUser(context, payload) {
-      const {email, password} = payload;
-      fetch(`http://localhost:10000/auth/login?email=${this.email}&password=${this.password}`, {
-        method: 'POST',
-        body: JSON.stringify(email, password),
+    register: async (context, data) => {
+      console.log("Sup")
+      await fetch('http://localhost:3000/register', {
+        method: "POST",
+        body: JSON.stringify(data),
         headers: {
-          'Content-type': 'application/json; charset=UTF-8',
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+        .then(res => res.json())
+        .then(userData => console.log(userData))
+    },
+    login: async (context, data) => {
+      console.log("Hi")
+      fetch("http://localhost:3000/login", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
         }
       })
         .then((res) => res.json())
-        .then((data) => context.state.user = data.results);
+        .then((data) => {
+          console.log(data)
+          let user = data.msg
+          context.commit("setUser", user);
+          // .then(() => console.log(context.state.user))
+          // alert('Login in success')
+          // router.push("/products");
+        });
+      
+      
     },
-  },
-  async registerUser(context, payload) {
-    const { fullname, email, password, phone } = payload;
-    fetch(`https://luna-rose.herokuapp.com/auth/signup?fullname=${this.fullname}&email=${this.email}&password=${this.password}&phone=${this.phone}`, {
-      method: 'POST',
-      body: JSON.stringify(fullname, email, password, phone),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      }
-    })
-      .then((res) => res.json())
-      .then((data) => context.state.user = data.results);
+    async getProducts(context) {
+      fetch('http://localhost:3000/prod')
+        .then((res) => res.json())
+        .then((data) => context.state.products = data.prods)
+    },
+    async getProduct(context, id) {
+      fetch('http://localhost:3000/prod' + id)
+        .then((res) => res.json())
+        .then((data) => context.commit('setProduct', data.prods))
+    },
+    // async getProducts(context) {
+    //   fetch('http://localhost:3000/prod')
+    //     .then((res) => res.json())
+    //     .then((data) => console.log(data.prods),
+    //       context.commit('setProducts', data.prods));
+    // },
+    // async getProduct(context, id) {
+    //   fetch('http://localhost:3000/prod/' + id
+    //     .then((res) => res.json())
+    //     .then((data) => context.commit('setProduct', data.prod))
+    //   )
+    // },
+    // async getProductByCat(context, category) {
+    //   fetch('http://localhost:3000/prodCat/' + category)
+    //     .then((res) => res.json())
+    //     .then((data) =>
+    //       context.commit('setProducts', data.results))
+    // },
   },
   modules: {
   }

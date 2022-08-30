@@ -25,15 +25,18 @@
                     </div>
                     <div class="col item social"><a href="#"><i class="fa-brands fa-facebook"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2018</p>
+                <p class="copyright">Emi's Lounge &copy; {{new Date().getFullYear()}}<span>
+                
+                </span>
+                </p>
             </div>
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+
+export default {
+};
 </script>
 
 <style scoped>

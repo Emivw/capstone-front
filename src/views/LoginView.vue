@@ -42,10 +42,11 @@
 </template>
 <scripts>
 export default {
-	  data() {
+data() {
     return {
       email: "",
       password: "",
+      clicked : false
     };
   },
   computed: {
@@ -59,7 +60,8 @@ export default {
         email: this.email,
         password: this.password,
       };
-      return this.$store.dispatch("loginUser", user);
+      this.clicked = true
+      return this.$store.dispatch("login", user);
     },
   },
 };
