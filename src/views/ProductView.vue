@@ -1,146 +1,17 @@
 <template>
- <div class="slider">
-  <!-- slide 1 -->
-  <div class="slide">
-    <img :src="product.prodImg12" alt="" />
-  </div>
+<div v-if="products" class="row my-5">
 
-  <!-- slide 2 -->
-  <div class="slide">
-    <img :src="product.prodImg13" alt="" />
-  </div>
 
-  <!-- slide 3 -->
-  <div class="slide">
-    <img :src="product.prodImg14" alt="" />
-  </div>
+</div>
+<div v-else>Loading....</div>
 
-  <!-- slide 4 -->
-  <div class="slide">
-    <img :src="product.prodImg15" alt="" />
-  </div>
-
-  <!-- Control buttons -->
-  <button class="btn btn-next"> ></button>
-  <button class="btn btn-prev"> &it </button>
-</div> 
 </template>
 
 <script>
-"use strict";
-// Select all slides
-const slides = document.querySelectorAll(".slide");
+export default {
+  props: ["product"]
 
-// loop through slides and set each slides translateX
-slides.forEach((slide, indx) => {
-  slide.style.transform = `translateX(${indx * 100}%)`;
-});
-
-// select next slide button
-const nextSlide = document.querySelector(".btn-next");
-
-// current slide counter
-let curSlide = 0;
-// maximum number of slides
-let maxSlide = slides.length - 1;
-
-// add event listener and navigation functionality
-nextSlide.addEventListener("click", function () {
-  // check if current slide is the last and reset current slide
-  if (curSlide === maxSlide) {
-    curSlide = 0;
-  } else {
-    curSlide++;
-  }
-
-  //   move slide by -100%
-  slides.forEach((slide, indx) => {
-    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-  });
-});
-
-// select next slide button
-const prevSlide = document.querySelector(".btn-prev");
-
-// add event listener and navigation functionality
-prevSlide.addEventListener("click", function () {
-  // check if current slide is the first and reset current slide to last
-  if (curSlide === 0) {
-    curSlide = maxSlide;
-  } else {
-    curSlide--;
-  }
-
-  //   move slide by 100%
-  slides.forEach((slide, indx) => {
-    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-  });
-});
-
-    export default {
-        props: ["product"]
-    }
+};
 </script>
-
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.slider {
-  width: 100%;
-  max-width: 800px;
-  height: 350px;
-  position: relative;
-  overflow: hidden; /* <===  */
-  border-radius: 15px;
-}
-
-.slide {
-  width: 100%;
-  max-width: 800px;
-  height: 350px;
-  position: absolute;
-  transition: all 0.5s;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.btn {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 50%;
-  z-index: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  font-size: 18px;
-}
-.btn:active {
-  transform: scale(1.1);
-}
-.btn-prev {
-  top: 45%;
-  left: 2%;
-}
-
-.btn-next {
-  top: 45%;
-  right: 2%;
-}
-
 </style>

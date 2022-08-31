@@ -26,7 +26,7 @@ export default createStore({
   actions: {
     register: async (context, data) => {
       console.log("Sup")
-      await fetch('http://localhost:3000/register', {
+      await fetch('https://capstone-api-final.herokuapp.com//register', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -38,7 +38,7 @@ export default createStore({
     },
     login: async (context, data) => {
       console.log("Hi")
-      fetch("http://localhost:3000/login", {
+      fetch("https://capstone-api-final.herokuapp.com//login", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -58,14 +58,15 @@ export default createStore({
       
     },
     async getProducts(context) {
-      fetch('http://localhost:3000/prod')
+      fetch('https://capstone-api-final.herokuapp.com/products/')
         .then((res) => res.json())
         .then((data) => context.state.products = data.prods)
     },
     async getProduct(context, id) {
-      fetch('http://localhost:3000/prod' + id)
+      fetch('https://capstone-api-final.herokuapp.com/products/' + prodID)
         .then((res) => res.json())
         .then((data) => context.commit('setProduct', data.prods))
+      
     },
     // async getProducts(context) {
     //   fetch('http://localhost:3000/prod')

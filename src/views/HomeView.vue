@@ -9,8 +9,8 @@
                 <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
             </p>
     </div>
-<Carousel/>
     </div>
+<Carousel/>
 </template>
 <script>
 import Carousel from "../components/Carousel.vue";
