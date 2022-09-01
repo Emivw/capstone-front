@@ -35,7 +35,9 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
            </router-link>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                       <router-link to="/admin">
+            <li><a class="dropdown-item" href="#">Admin</a></li>
+           </router-link>
           </ul>
         </li>
       </ul>

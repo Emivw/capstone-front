@@ -3,7 +3,7 @@
 <div v-if="products" class="row my-5">
     <ProductCard 
     v-for="product in products" 
-    :key="product" 
+    :key="product.prodID" 
     :product="product"/>
 </div>
 <div v-else>Loading....</div>

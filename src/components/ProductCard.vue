@@ -12,8 +12,8 @@
             <span class="preview-card__code">26 December 2019</span>
             <div class="preview-card__title">{{product.prodTitle}}</div>
             <div class="preview-card__text"> {{product.prodDesc}}</div>
-                        <router-link :to="{ name: 'product', params: { id: product.prodID } }">
-            <a href="#" class="preview-card__button">READ MORE</a>
+                        <router-link :to="{ name: 'product', params: { id: product.prodID} }">
+            <a href="#" class="preview-card__button"> READ MORE</a>
             </router-link>
           </div>
         </div>

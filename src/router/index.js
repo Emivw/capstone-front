@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ProductsView from '../views/ProductsView.vue'
 import ProductView from '../views/ProductView.vue'
-
+import AdminView from '../views/AdminView.vue'
 const routes = [
   {
     path: '/',
@@ -35,9 +35,14 @@ const routes = [
     component: ProductsView
   },
   {
-    path: '/products/:prodID',
+    path: '/products/:id',
     name: 'product',
     component: ProductView
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminView
   },
 ]
 
