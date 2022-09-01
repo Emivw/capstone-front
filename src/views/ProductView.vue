@@ -3,8 +3,11 @@
       <div class="row">
     
         <div v-if="product" id="item">
-         
-
+        <div class="row">
+         <div class="col-md-6">
+            <img :src="product[0].prodImg3" alt=" " class="img-fluid"/>
+         </div>
+        <div class="col-md-6">
             <div class="information-area">
               <div id="details" class="info-top text-white">
                 <h1>{{product[0].prodTitle}}</h1>
@@ -16,22 +19,24 @@
               </div>
                 <router-link to="/products"><button class=" btn btn-grad">Go Back</button></router-link>
             </div>
-            <img :src="product[0].prodImg3" alt="avatar" class="img-fluid"/>
-             <!-- <img :src="product[0].prodImg10" alt="avatar" class="img-fluid"/> -->
-            <img :src="product[0].prodImg11" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg12" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg13" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg14" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg15" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg16" alt="avatar" class="img-fluid"/>
-                <img :src="product[0].prodImg1" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg9" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg4" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg2" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg8" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg5" alt="avatar" class="img-fluid"/>
-            <img :src="product[0].prodImg6" alt="avatar" class="img-fluid"/> 
-            <img :src="product[0].prodImg7" alt="avatar" class="img-fluid"/> 
+         </div>
+        </div>
+
+             <img :src="product[0].prodImg10" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg11" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg12" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg13" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg14" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg15" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg16" alt=" " class="img-fluid"/>
+                <img :src="product[0].prodImg1" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg9" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg4" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg2" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg8" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg5" alt=" " class="img-fluid"/>
+            <img :src="product[0].prodImg6" alt=" " class="img-fluid"/> 
+            <img :src="product[0].prodImg7" alt=" " class="img-fluid"/> 
           
         </div>
         <div v-else>Loading....</div>
