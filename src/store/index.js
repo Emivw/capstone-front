@@ -100,9 +100,11 @@ export default createStore({
     //       context.commit('setProducts', data.prods));
     // },
     async getProduct(context, id) {
+      console.log('hi');
       fetch(api + 'products/' + id)
         .then((res) => res.json())
-        .then((data) => context.state.product = data.results)
+        .then((data) => console.log(context.state.product = data.product))
+      
     },
     // async getProductByCat(context, category) {
     //   fetch('http://localhost:3000/prodCat/' + category)

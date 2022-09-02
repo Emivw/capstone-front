@@ -23,7 +23,10 @@
           <a class="nav-link"  href="#">Products</a>
         </li>
         </router-link>
-        <li class="nav-item dropdown">
+        <router-link to="/admin" v-if="user">
+            <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
+        </router-link>
+        <li class="nav-item dropdown" v-else>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -35,9 +38,6 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
            </router-link>
             <li><hr class="dropdown-divider"></li>
-                       <router-link to="/admin">
-            <li><a class="dropdown-item" href="#">Admin</a></li>
-           </router-link>
           </ul>
         </li>
       </ul>
