@@ -5,7 +5,8 @@ export default createStore({
     user: null,
     users: null,
     products: null,
-    product: null
+    product: null,
+    errMsg: null
   },
   getters: {
   },
@@ -21,14 +22,18 @@ export default createStore({
     },
     setUsers(state, users) {
       state.users = users;
+    },
+    setErrMsg(state, errMsg) {
+      state.errMsg = errMsg;
+
     }
   },
   actions: {
-    register: async (context, data) => {
+    register: async (context, payload) => {
       console.log("Sup")
       await fetch('https://capstone-api-final.herokuapp.com/register', {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'
         }
@@ -36,29 +41,39 @@ export default createStore({
         .then(res => res.json())
         .then(userData => console.log(userData))
     },
-    login: async (context, data) => {
+    login: async (context, payload) => {
       console.log("Hi")
-      fetch("https://capstone-api-final.herokuapp.com/login", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8'
-        }
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data)
-          let user = data.msg
-          context.commit("setUser", user);
-          // .then(() => console.log(context.state.user))
-          // alert('Login in success')
-          // router.push("/products");
-        });
-      
-      
+      try {
+        await fetch("https://capstone-api-final.herokuapp.com/auth/login", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { user } = data;
+            console.log(user);
+            context.commit("setUser", user);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
     },
     async getProducts(context) {
-      fetch(api +'products')
+      fetch(api + 'products')
         .then((res) => res.json())
         .then((data) => context.state.products = data.products)
     },
@@ -66,7 +81,7 @@ export default createStore({
     //   fetch(api + '/products' + prodID)
     //     .then((res) => res.json())
     //     .then((data) => context.commit('setProduct', data.prods))
-      
+
     // },
     // getproduct: async (context, prodID) => {
     //   let res = await fetch(api + prodID);

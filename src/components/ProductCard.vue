@@ -6,7 +6,7 @@
       <div class="preview-card__wrp">
         <div class="preview-card__item">
           <div class="preview-card__img">
-            <img :src="product.prodImg3" alt="">
+            <img :src="product.prodImg1" alt="">
           </div>
           <div class="preview-card__content">
             <span class="preview-card__code">26 December 2019</span>
