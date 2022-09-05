@@ -1,6 +1,7 @@
 <template>
+  <div class="wrapper">
     <div class="container">
-<div v-if="products" class="row my-5">
+<div v-if="products" class="row p-5">
     <ProductCard 
     v-for="product in products" 
     :key="product.prodID" 
@@ -8,6 +9,7 @@
 </div>
 <div v-else>Loading....</div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -27,5 +29,13 @@ export default {
 </script>
 
 <style scoped>
+  .container{
+
+  }
+  /* .wrapper{
+  height: 100vh;
+      background: url('https://images.pexels.com/photos/1901028/pexels-photo-1901028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      background-size: cov;
+} */
 
 </style>

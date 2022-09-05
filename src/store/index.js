@@ -77,28 +77,6 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => context.state.products = data.products)
     },
-    // async getProduct(context, prodID) {
-    //   fetch(api + '/products' + prodID)
-    //     .then((res) => res.json())
-    //     .then((data) => context.commit('setProduct', data.prods))
-
-    // },
-    // getproduct: async (context, prodID) => {
-    //   let res = await fetch(api + prodID);
-    //   let data = await res.json();
-    //   let result = data.results;
-    //   if (result) {
-    //     context.commit('setProduct', result)
-    //   } else {
-    //     console.log('loading...')
-    //   }
-    // },
-    // async getProducts(context) {
-    //   fetch('http://localhost:3000/prod')
-    //     .then((res) => res.json())
-    //     .then((data) => console.log(data.prods),
-    //       context.commit('setProducts', data.prods));
-    // },
     async getProduct(context, id) {
       console.log('hi');
       fetch(api + 'products/' + id)

@@ -10,7 +10,10 @@
           </div>
           <div class="preview-card__content">
             <span class="preview-card__code">26 December 2019</span>
-            <div class="preview-card__title">{{product.prodTitle}}</div>
+            <div class="preview-card__title"><h2>
+			{{product.prodTitle}}
+			</h2>
+			</div>
             <div class="preview-card__text"> {{product.prodDesc}}</div>
                         <router-link :to="{ name: 'product', params: { id: product.prodID} }">
             <a href="#" class="preview-card__button"> READ MORE</a>
@@ -40,6 +43,9 @@
 	Fira Sans"
 	, sans-serif;
 }
+.preview-card__text{
+		color: #541212 !important;
+}
  .preview-card {
 	 position: relative;
 	 margin: 15px;
@@ -48,6 +54,8 @@
 	 padding: 30px 25px 30px;
 	 border-radius: 25px;
 	 transition: all 0.3s;
+	 		background: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+			background-size: cover;
 }
  @media screen and (max-width: 992px) {
 	 .preview-card {
@@ -244,8 +252,8 @@
 	 letter-spacing: 1px;
 }
  .preview-card__button:hover {
-	 color: #989898;
-	 text-decoration: none;
+	color: #541212 !important;;
+	text-decoration: none;
 }
  @media screen and (max-width: 576px) {
 	 .preview-card__button {

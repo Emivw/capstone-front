@@ -85,6 +85,9 @@ export default {
 };
 </script>
 <style scoped>
+	.container-fluid{  
+		background: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
 .main-content {
   width: 50%;
   border-radius: 20px;
@@ -93,7 +96,7 @@ export default {
   display: flex;
 }
 .company__info {
-  background-color: #008080;
+  background-color: #8B9A46;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   display: flex;
@@ -122,7 +125,7 @@ export default {
   }
 }
 .row > h2 {
-  color: #008080;
+  color: #541212;
 }
 .login_form {
   background-color: #fff;
@@ -146,7 +149,7 @@ form {
   transition: all 0.5s ease;
 }
 .form__input:focus {
-  border-bottom-color: #008080;
+  border-bottom-color: #541212;
   box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
   border-radius: 4px;
 }
@@ -154,16 +157,19 @@ form {
   transition: all 0.5s ease;
   width: 70%;
   border-radius: 30px;
-  color: #008080;
+  color: #8B9A46;
   font-weight: 600;
   background-color: #fff;
-  border: 1px solid #008080;
+  border: 1px solid 541212;
   margin-top: 1.5em;
   margin-bottom: 1em;
 }
 .btn:hover,
 .btn:focus {
-  background-color: #008080;
+  background-color: #541212;
   color: #fff;
+}
+.bg-success {
+    background-color: #541212!important;
 }
 </style>
