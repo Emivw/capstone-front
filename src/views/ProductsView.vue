@@ -32,10 +32,10 @@ export default {
   .container{
 
   }
-  /* .wrapper{
+  .wrapper{
   height: 100vh;
-      background: url('https://images.pexels.com/photos/1901028/pexels-photo-1901028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-      background-size: cov;
-} */
+      background: url('https://i.pinimg.com/originals/b6/a1/cd/b6a1cdabd0417caeee8626c333caf822.jpg');
+      background-size: cover;
+}
 
 </style>
