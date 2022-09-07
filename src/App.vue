@@ -34,7 +34,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #541212 !important;
-  background-color: #0F0E0E;
+  background-color: black !important;
   font-family: 'carnaval', cursive;
 }
 .btn{

@@ -84,6 +84,18 @@ export default createStore({
         .then((data) => console.log(context.state.product = data.product))
       
     },
+    async getUsers(context) {
+      fetch(api + 'user')
+        .then((res) => res.json())
+        .then((data) => context.state.users = data.users)
+    },
+    async getUser(context, id) {
+      console.log('hi');
+      fetch(api + 'user/' + id)
+        .then((res) => res.json())
+        .then((data) => console.log(context.state.user = data.users))
+
+    },
     // async getProductByCat(context, category) {
     //   fetch('http://localhost:3000/prodCat/' + category)
     //     .then((res) => res.json())

@@ -3,28 +3,22 @@
 <table class="table table-bordered text-white" >
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">TITLE</th>
-      <th scope="col">CATEGORY</th>
-      <th scope="col">STOCK</th>
-      <th scope="col">DESCRIPTION</th>
-      <th scope="col">COLOR</th>
-      <th scope="col">PRICE</th>
-      <th scope="col">IMAGE1</th>
+      <th scope="col">Users</th>
+      <th scope="col">Products</th>
     </tr>
   </thead>
-  <tbody v-for="product in products" 
-    :key="product.prodID" 
-    :product="product">
+  <tbody>
     <tr>
-      <th scope="row">{{product.prodID}}</th>
-      <td>{{product.prodTitle}}</td>
-<td>{{product.prodCat}}</td>
-<td>{{product.prodStock}}</td>
-<td>{{product.prodDesc}}</td>
-<td>{{product.color}}</td>
-<td>{{product.prodPrice}}</td>
-<td><img :src="product.prodImg1" alt=""></td>
+      <th scope="row">
+    <router-link to="admin/users">
+      <button class="btn btn-primary">Users</button>
+    </router-link>
+      </th>
+      <td>
+    <router-link to="admin/products">
+      <button class="btn btn-primary">Products</button>
+    </router-link>
+      </td>
     </tr>
   </tbody>
 </table>

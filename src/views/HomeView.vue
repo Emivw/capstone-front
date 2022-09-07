@@ -1,9 +1,16 @@
 <template>
     <div class="wrapper">
 <Landing/>
+<div class="classic">
+</div>
 <Testimonial/>
+<div class="classic">
+</div>
 <Carousel/>
+<div class="classic">
+</div>
 <Contact/>
+
     </div>
 </template>
 
@@ -20,5 +27,10 @@ import Testimonial from '@/components/Testimonial.vue';
 <style scoped>
 .wrapper{
 height: 100%;
+}
+.classic {
+background: black;
+background-size:;
+height: 10vh;
 }
 </style>
