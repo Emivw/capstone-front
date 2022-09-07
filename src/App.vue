@@ -36,6 +36,7 @@ export default {
   color: #541212 !important;
   background-color: black !important;
   font-family: 'carnaval', cursive;
+  overflow-x: hidden;
 }
 .btn{
   background-color: #541212  !important;
@@ -61,10 +62,19 @@ h3 {
 h4 {
   font-family: 'teamSpirit', cursive;
 }
-h5 {
-  font-family: 'teamSpirit', cursive;
-}
 h6 {
+  display: inline-block;
+  
+  font-family: 'Lato', sans-serif;
+  color: #f55;
+  padding: 2px;
+  text-transform: uppercase;
+  font-size: 4em;
+  text-shadow: 0px 0px 15px #f00, 0px 0px 12px #f00, 0px 0px 5px #f00;
+  border-radius: 40% 60%;
+  box-shadow: -1px -1px 1px #000,-2px -2px 1px #000,-3px -3px 4px #000, -5px -5px 1px #00f,-8px -8px 1px #55f, -9px -9px 12px #00f, 1px 1px 1px #000,2px 2px 1px #000, 3px 3px 4px #000, 5px 5px 1px #00f,8px 8px 1px #55f, 9px 9px 12px #00f;
+}
+h5 {
   font-family: 'teamSpirit', cursive;
 }
 router-view{

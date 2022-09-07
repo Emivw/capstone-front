@@ -30,16 +30,35 @@ export default createStore({
   },
   actions: {
     register: async (context, payload) => {
-      console.log("Sup")
-      await fetch('https://capstone-api-final.herokuapp.com/register', {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8'
-        }
-      })
-        .then(res => res.json())
-        .then(userData => console.log(userData))
+      console.log("Hi")
+      try {
+        await fetch("https://capstone-api-final.herokuapp.com/auth/register", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { user } = data;
+            console.log(user);
+            context.commit("setUser", user);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
     },
     login: async (context, payload) => {
       console.log("Hi")

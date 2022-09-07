@@ -42,7 +42,7 @@
 		</div>
 	</div>
 </template>
-<scripts>
+<script>
 export default {
 	  data() {
     return {
@@ -69,7 +69,7 @@ export default {
     },
   },
 };
-</scripts>
+</script>
 <style scoped>
 	.container-fluid{  
 		background: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');

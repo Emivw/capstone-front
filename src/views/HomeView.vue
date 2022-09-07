@@ -2,12 +2,15 @@
     <div class="wrapper">
 <Landing/>
 <div class="classic">
+<h6>WHAT WE OFFER</h6>
 </div>
 <Testimonial/>
 <div class="classic">
+<h6>our Wares</h6>
 </div>
 <Carousel/>
 <div class="classic">
+<h6>Reach OUT</h6>
 </div>
 <Contact/>
 
@@ -31,6 +34,7 @@ height: 100%;
 .classic {
 background: black;
 background-size:;
-height: 10vh;
+height: 100%;
+
 }
 </style>
