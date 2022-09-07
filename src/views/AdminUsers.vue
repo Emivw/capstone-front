@@ -4,13 +4,13 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#ID</th>
-      <th scope="col">TITLE</th>
-      <th scope="col">CATEGORY</th>
-      <th scope="col">STOCK</th>
-      <th scope="col">DESCRIPTION</th>
-      <th scope="col">COLOR</th>
-      <th scope="col">PRICE</th>
-      <th scope="col">IMAGE1</th>
+      <th scope="col">FULLNAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PASSWORD</th>
+      <th scope="col">ROLE ID</th>
+      <th scope="col">CREATED AT</th>
+      <th scope="col">UPDATED AT</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody v-for="product in products" 
@@ -34,12 +34,12 @@
 <script>
     export default {
           computed: {
-    products() {
-      return this.$store.state.products;
+    Users() {
+      return this.$store.state.users;
     },
   },
   mounted() {
-    this.$store.dispatch("getProducts");
+    this.$store.dispatch("getUsers");
   },
     }
 </script>

@@ -1,10 +1,7 @@
 <template>
-<section class="pollaroid-gallery">
-  <main class="py-5">
-    <section class="surname"><span class="letter letter--0">C</span><span class="letter letter--1">O</span><span class="letter letter--2">L</span><span class="letter letter--3">L</span><span class="letter letter--4">E</span><span class="letter letter--5">C</span><span class="letter letter--6">T</span><span class="letter letter--7">I</span><span class="letter letter--8">O</span><span class="letter letter--9">N</span></section>
-    </main>
+<section class="pollaroid-gallery p-5">
 
-    <figure class="pollaroid-card" v-for="product in products" 
+    <figure class="pollaroid-card m-4" v-for="product in products" 
     :key="product.prodID" 
     :product="product">
             <img :src="product.prodImg1" alt="icecream" width="200" height="300" class="img-fluid">
@@ -29,9 +26,10 @@ export default {
 .home-demo .item {
   background: #ff3f4d;
 }
-body {
-  background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY1MDQ3MjkzNQ&ixlib=rb-1.2.1&q=85');
-     background-repeat: no-repeat;
+.pollaroid-gallery {
+  background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+   height:  100%;
+   background-size: cover;
 
 }
 

@@ -12,22 +12,18 @@
 						<h2>Sign Up</h2>
 					</div>
 					<div class="row">
-						<form control="" method="POST" @submit.prevent="register" class="form-group" >
+						<form @submit.prevent="register" class="form-group" >
 							<div class="row">
-								<input type="text" name="fullname" v-model="fullname" id="fullname" class="form__input" placeholder="Full name">
+								<input type="text" name="fullname" v-model="fullname" id="fullname" class="form__input" placeholder="Full name" required>
 							</div>
-              	<div class="row">
-								<input type="email" name="email" v-model="email" id="email" class="form__input" placeholder="Email">
-							</div>
-							<div class="row">
-								<input type="text" name="number" v-model="phone" id="number" class="form__input" placeholder="Phone number">
+              				<div class="row">
+								<input type="email" name="email" v-model="email" id="email" class="form__input" placeholder="Email" required>
 							</div>
 							<div class="row">
-								<input type="password" name="password" v-model="password" id="password" class="form__input" placeholder="Password">
+								<input type="text" name="number" v-model="phone" id="number" class="form__input" placeholder="Phone number" required>
 							</div>
 							<div class="row">
-								<input type="checkbox" name="remember_me" id="remember_me" class="">
-								<label for="remember_me">Remember Me!</label>
+								<input type="password" name="password" v-model="password" id="password" class="form__input" placeholder="Password" required>
 							</div>
 							<div class="row">
 								<input type="submit" value="Submit" class="btn">

@@ -22,7 +22,6 @@
                     <div class="col-md-6 item text">
                         <h3>Company Name</h3>
                         <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    <Contact/>
                     </div>
                     <div class="col item social"><a href="#"><i class="fa-brands fa-facebook"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
                 </div>
@@ -35,10 +34,9 @@
 </template>
 
 <script>
-import Contact from './Contact.vue';
 
 export default {
-    components: { Contact }
+
 };
 </script>
 
@@ -46,7 +44,7 @@ export default {
 .footer-dark {
   padding:50px 0;
   color:#f0f9ff;
-  background-color:#282d32;
+  background-color: #541212;
 }
 
 .footer-dark h3 {

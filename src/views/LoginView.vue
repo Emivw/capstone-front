@@ -24,6 +24,7 @@
                   id="email"
                   class="form__input"
                   placeholder="email"
+                  required
                 />
               </div>
               <div class="row">
@@ -34,11 +35,8 @@
                   id="password"
                   class="form__input"
                   placeholder="Password"
+                  required
                 />
-              </div>
-              <div class="row">
-                <input type="checkbox" name="remember_me" id="remember_me" class="" />
-                <label for="remember_me">Remember Me!</label>
               </div>
               <div class="row">
                 <button type="submit" class="btn">submit</button>

@@ -33,8 +33,8 @@ export default {
 
   }
   .wrapper{
-  height: 100vh;
-      background: url('https://i.pinimg.com/originals/b6/a1/cd/b6a1cdabd0417caeee8626c333caf822.jpg');
+  height: 100%;
+      background: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
       background-size: cover;
 }
 

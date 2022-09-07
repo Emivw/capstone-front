@@ -4,9 +4,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="site-heading text-center">
-<main class="">
-    <section class="surname"><span class="letter letter--0">W</span><span class="letter letter--1">H</span><span class="letter letter--2">A</span><span class="letter letter--3">T</span><span class="letter letter--4"> </span><span class="letter letter--5">W</span><span class="letter letter--6">E</span><span class="letter letter--7"> </span><span class="letter letter--8">O</span><span class="letter letter--9">F</span><span class="letter letter--10">F</span><span class="letter letter--11">E</span><span class="letter letter--12">R</span></section>
-</main>
                     </div>
                 </div>
             </div>

@@ -4,10 +4,6 @@
             <h1 class="display-3">Noir Gentlemen Gifts</h1>
             <p class="lead">WELCOME TO THE NOIR WHERE WE KEEP THE GENTS LOOKING LIKE GENTLEMEN</p>
             <hr class="my-2">
-<main class="container">
-    <section class="name"><span class="letter letter--0">W</span><span class="letter letter--1">E</span><span class="letter letter--2">L</span><span class="letter letter--3">C</span><span class="letter letter--4">O</span><span class="letter letter--5">M</span><span class="letter letter--6">E</span></section>
-    <section class="surname"><span class="letter letter--0">G</span><span class="letter letter--1">E</span><span class="letter letter--2">N</span><span class="letter letter--3">T</span><span class="letter letter--4">L</span><span class="letter letter--5">E</span><span class="letter letter--6">M</span><span class="letter letter--7">E</span><span class="letter letter--8">N</span></section>
-</main>
 <div class="center">
   <div class="down"></div>
 </div>
