@@ -103,6 +103,68 @@ export default createStore({
         .then((data) => console.log(context.state.product = data.product))
       
     },
+    createProduct: async (context, payload) => {
+      console.log("Hi")
+      try {
+        await fetch(api + 'products/', {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { product } = data;
+            console.log(user);
+            context.commit("setProduct", product);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
+    },
+    updateProduct: async (context, payload) => {
+      console.log("Hi")
+      try {
+        await fetch(api + 'products/' + id, {
+          method: "PATCH",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { product } = data;
+            console.log(user);
+            context.commit("setProduct", product);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
+    },
     async getUsers(context) {
       fetch(api + 'user')
         .then((res) => res.json())
