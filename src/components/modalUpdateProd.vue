@@ -91,8 +91,23 @@
 
 <script>
     export default {
-        
-    }
+        props:['product'],
+        methods:{
+            editProduct(){
+            const payload = {
+                prodTitle: this.product.prodTitle,
+                prodCat: this.product.prodCat,
+                prodStock: this.product.prodStock,
+                prodDesc: this.product.prodDesc,
+                prodColor: this.product.prodColor,
+                prodPrice: this.product.prodPrice,
+                prodImg1: this.product.prodImg1,
+            };
+                this.$store.dispatch('editProduct', payload);
+                document.getElementById(`editProductClose`+this.product.prodID).click();
+            }
+        }
+}
 </script>
 
 <style scoped>
