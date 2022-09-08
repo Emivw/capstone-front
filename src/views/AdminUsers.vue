@@ -35,7 +35,7 @@
 <td>{{user.createdAt}}</td>
 <td>{{user.updatedAt}}</td>
 <td><button class="btn btn-primary">Update</button>
-<button class="btn btn-primary">Delete</button>
+<button class="btn btn-primary" @click="this.$store.dispatch('deleteUser', user.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
 </td>
     </tr>
   </tbody>

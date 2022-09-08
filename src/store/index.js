@@ -1,3 +1,4 @@
+import { createTransformContext } from '@vue/compiler-core';
 import { createStore } from 'vuex'
 const api = 'https://capstone-api-final.herokuapp.com/'
 export default createStore({
@@ -36,7 +37,8 @@ export default createStore({
           method: "POST",
           body: JSON.stringify(payload),
           headers: {
-            'Content-type': 'application/json; charset=UTF-8'
+            'Content-type': 'application/json; charset=UTF-8',
+            'set-cookie': 'token'
           }
         })
           .then((res) => res.json())
@@ -67,7 +69,7 @@ export default createStore({
           method: "POST",
           body: JSON.stringify(payload),
           headers: {
-            'Content-type': 'application/json; charset=UTF-8'
+            'Content-type': 'application/json; charset=UTF-8',
           }
         })
           .then((res) => res.json())
@@ -134,7 +136,7 @@ export default createStore({
 
 
     },
-    updateProduct: async (context, payload) => {
+    updateProduct: async (context, payload, id) => {
       console.log("Hi")
       try {
         await fetch(api + 'products/' + id, {
@@ -165,6 +167,22 @@ export default createStore({
 
 
     },
+    async deleteProduct(context, id) {
+      console.log('hi');
+      fetch(api + 'products/' + id, {
+        method: "DELETE",
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        }
+      })
+        .then((res) => res.json())
+        
+        .then((data) => {
+          console.log(data);
+          context.dispatch('getProducts');
+        });
+
+    },
     async getUsers(context) {
       fetch(api + 'user')
         .then((res) => res.json())
@@ -173,6 +191,77 @@ export default createStore({
     async getUser(context, id) {
       console.log('hi');
       fetch(api + 'user/' + id)
+        .then((res) => res.json())
+        .then((data) => console.log(context.state.user = data.users))
+
+    },
+    createUser: async (context, payload) => {
+      console.log("Hi")
+      try {
+        await fetch(api + 'user/', {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { product } = data;
+            console.log(user);
+            context.commit("setProduct", product);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
+    },
+    updateUser: async (context, payload, id) => {
+      console.log("Hi")
+      try {
+        await fetch(api + 'user/' + id, {
+          method: "PATCH",
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => {
+
+            let { user } = data;
+            console.log(user);
+            context.commit("setUser", user);
+            // .then(() => console.log(context.state.user))
+            // alert('Login in success')
+            // router.push("/products");
+          })
+          .catch((err) => {
+            context.commit('setErrMsg', err);
+          });
+
+
+      } catch (e) {
+        context.commit('setErrMsg', e.message)
+      }
+
+
+    },
+    async deleteUser(context, id) {
+      console.log('hi');
+      fetch(api + 'user/' + id, {
+        method: "DELETE"
+      })
         .then((res) => res.json())
         .then((data) => console.log(context.state.user = data.users))
 
