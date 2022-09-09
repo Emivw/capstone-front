@@ -61,7 +61,7 @@
             </div>
 
             <div class="modal-body">
-                <form method="PUT" @submit.prevent="editProduct">
+                <form method="PATCH" @submit.prevent="editProduct">
                     <label class="form-label">ID</label>
                     <input type="number" class="form-control" :value="product.prodID" readonly>
                     <label class="form-label">Product Name</label>
@@ -78,7 +78,7 @@
                     <input type="text" class="form-control" v-model="product.prodStock">
                     <label class="form-label">Price</label>
                     <input type="number" class="form-control" v-model="product.prodPrice">
-                    <button type="submit" class="btn btn-grad">Save Changes</button>
+                    <button type="button" class="btn btn-grad" @click="editProduct(product.prodID)">Save Changes</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -91,10 +91,19 @@
 
 <script>
     export default {
-        props:['product'],
+    props: ['product'],
+    //     computed: {
+    //     products() {
+    //         return this.$store.state.products;
+    //     }
+    // },
+    // mounted() {
+    //     this.$store.dispatch("getProducts");
+    // },
         methods:{
-            editProduct(){
-            const payload = {
+            editProduct(id){
+                const payload = {
+                id: id,
                 prodTitle: this.product.prodTitle,
                 prodCat: this.product.prodCat,
                 prodStock: this.product.prodStock,

@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid table-responsive py-5"> 
+<div class="container-fluid table-responsive py-5 mt-5 mt-5"> 
 <table class="table table-bordered text-white" >
   <thead class="thead-dark">
     <tr>

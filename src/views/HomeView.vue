@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Landing />
+    <Landing  class="mt-5"/>
     <div class="classic">
       <h6>WHAT WE OFFER</h6>
     </div>

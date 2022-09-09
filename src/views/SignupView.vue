@@ -1,6 +1,6 @@
 <template>
 	<!-- Main Content -->
-	<div class="container-fluid">
+	<div class="container-fluid pt-5">
 		<div class="row main-content bg-success text-center">
 			<div class="col-md-4 text-center company__info" v-if="user">
 				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>

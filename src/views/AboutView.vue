@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 <section class="about-section">
         <div class="container">
             <div class="row">

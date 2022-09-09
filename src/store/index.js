@@ -136,12 +136,22 @@ export default createStore({
 
 
     },
-    updateProduct: async (context, payload, id) => {
+    editProduct: async (context, payload) => {
       console.log("Hi")
       try {
-        await fetch(api + 'products/' + id, {
-          method: "PATCH",
-          body: JSON.stringify(payload),
+        await fetch(api + 'products/' + payload.id, {
+          method: "PUT",
+          body: JSON.stringify(
+            {
+              prodTitle: payload.prodTitle,
+              prodCat: payload.prodCat,
+              prodStock: payload.prodStock,
+              prodDesc: payload.prodDesc,
+              prodColor: payload.prodColor,
+              prodPrice: payload.prodPrice,
+              prodImg1: payload.prodImg1,
+            }
+          ),
           headers: {
             'Content-type': 'application/json; charset=UTF-8'
           }
@@ -226,12 +236,20 @@ export default createStore({
 
 
     },
-    updateUser: async (context, payload, id) => {
+    editUser: async (context, payload) => {
       console.log("Hi")
       try {
-        await fetch(api + 'user/' + id, {
-          method: "PATCH",
-          body: JSON.stringify(payload),
+        await fetch(api + 'user/' + payload.id, {
+          method: "PUT",
+          body: JSON.stringify(
+            {
+              fullname: payload.fullname,
+              password: payload.password,
+              phone: payload.phone,
+              role_id: payload.role_id,
+              email: payload.email,
+            }
+          ),
           headers: {
             'Content-type': 'application/json; charset=UTF-8'
           }
