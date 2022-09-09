@@ -36,13 +36,6 @@
 * {
 	 box-sizing: border-box;
 }
- /* body {
-	 background-color: #fff;
-	 min-height: 100vh;
-	 font-family: "
-	Fira Sans"
-	, sans-serif;
-} */
 .preview-card__text{
 		color: #541212 !important;
 }

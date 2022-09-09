@@ -36,14 +36,6 @@
 <script>
     export default {
     props: ['user'],
-    //     computed: {
-    //     users() {
-    //         return this.$store.state.users;
-    //     }
-    // },
-    // mounted() {
-    //     this.$store.dispatch("getusers");
-    // },
         methods:{
             editUser(id){
                 const payload = {
