@@ -41,7 +41,7 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </ul>
-        <div v-if="user">
+        <!-- <div v-if="user">
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -60,6 +60,29 @@
               <li><hr class="dropdown-divider" /></li>
               <router-link to="/admin">
                 <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
+              </router-link>
+            </ul>
+          </li>
+        </div> -->
+        <div v-if="user">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Account <i class="fa fa-address-card" aria-hidden="true"> </i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <router-link to="/login">
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </router-link>
+              <li><hr class="dropdown-divider" /></li>
+              <router-link :to="{ name: 'profile', params: { id: user.id} }">
+                <li class="nav-item"><a class="nav-link" href="#">profile</a></li>
               </router-link>
             </ul>
           </li>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Contact from "@/components/Contact.vue";
+import Contact from "@/views/Contact.vue";
 import Landing from "@/components/Landing.vue";
 import Carousel from "@/components/Carousel.vue";
 import Testimonial from "@/components/Testimonial.vue";
@@ -32,7 +32,6 @@ export default {
 }
 .classic {
   background: black;
-  background-size: ;
   height: 100%;
 }
 </style>
